@@ -19,7 +19,7 @@ def func_time(func):
 
 @func_time
 def Fib(n):
-    print ((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5))
+    return ((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5))
 
 '''
 def fib(n):
@@ -34,11 +34,19 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 '''
 
+@func_time
+def comp():
+	sum002 = 0
+	for i in range(0, 34):
+		if Fib(i) % 2 == 0:
+			sum002 += i
+	print sum002
+
 # fib(34) = 5702887 > 4000000
 # fib(33) = 3524578 < 4000000
 
 #x = int(raw_input("Input a number?\n>"))
 x = 33
 if __name__ == "__main__":
-	Fib(x)
+	comp()
 	

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-DESCRIPTION
+This script is used to count rumtime.
 """
 
 import time
