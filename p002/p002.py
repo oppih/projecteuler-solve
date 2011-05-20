@@ -14,14 +14,13 @@ def func_time(func):
     def _wrapper(*args, **kwargs):
         start = time.time()
         func(*args, **kwargs)
-        print func.__name__, "run:", time.time()-start
+        print func.__name__, "run time:", time.time()-start
     return _wrapper
 
 @func_time
 def Fib(n):
     print ((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5))
 
-#fib = lambda n,a=1,b=1:[b,0][n>0] or fib(n-1,b,a+b)
 '''
 def fib(n):
 	"""
@@ -34,18 +33,12 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 '''
-'''
-def fibonacci(n):
-	"""
-	this way is also cool
-	"""
-	a,b = 0,1
-	for i in range(0,n):
-		print a
-    a,b, = b,a+b
-'''
 
-x = int(raw_input("Input a number?"))
+# fib(34) = 5702887 > 4000000
+# fib(33) = 3524578 < 4000000
+
+#x = int(raw_input("Input a number?\n>"))
+x = 33
 if __name__ == "__main__":
 	Fib(x)
 	
