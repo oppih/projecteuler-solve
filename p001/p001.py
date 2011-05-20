@@ -6,9 +6,21 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-sump001 = 0
-for i in range(3,1000):
-    if i % 3 == 0 or i % 5 == 0:
-        sump001 += i
+import time
+def func_time(func):
+	def _wrapper(*args, **kwargs):
+		start = time.time()
+		func(*args, **kwargs)
+		print func.__name__, "run:", time.time()-start
+	return _wrapper
 
-print sump001
+@func_time
+def p001():
+	sump001 = 0
+	for i in range(3,1000):
+		if i % 3 == 0 or i % 5 == 0:
+			sump001 += i
+	print sump001
+
+if __name__ == "__main__":
+	p001()
