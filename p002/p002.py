@@ -9,18 +9,17 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 """
 from math import sqrt
 import time
-
 def func_time(func):
     def _wrapper(*args, **kwargs):
         start = time.time()
         func(*args, **kwargs)
-        print func.__name__, "run time:", time.time()-start
+        print func.__name__, "run:", time.time()-start
     return _wrapper
-
-@func_time
+    
 def Fib(n):
-    return ((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5))
+    return int(((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5)))
 
+'''
 def fib(n):
     """
     This part contains problem: NoneType `fib` cannot use '+'
@@ -31,21 +30,23 @@ def fib(n):
         return 1
     else:
         return fib(n-1) + fib(n-2)
-
+'''
 
 @func_time
 def comp():
     sum002 = 0
     for i in range(0, 34):
-        if Fib(i) % 2 == 0:
-            sum002 += i
+        j = Fib(i)
+        print 'Fib', str(i), 'is', str(j)
+        if j % 2 == 0:
+            sum002 += j
     print sum002
 
 # fib(34) = 5702887 > 4000000
 # fib(33) = 3524578 < 4000000
 
 #x = int(raw_input("Input a number?\n>"))
-x = 33
+
 if __name__ == "__main__":
     comp()
 
