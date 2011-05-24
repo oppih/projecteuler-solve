@@ -14,8 +14,16 @@ def func_time(func):
 
 @func_time
 def manually_count():
-    print "manually way:"
+    print "\nmanually way:"
     print 2**4 * 3**2 * 5 * 7 * 11 * 13 * 17 * 19
+
+@func_time
+def loop_way():
+    """
+    idea from stackoverflow
+    http://stackoverflow.com/questions/2127039/smallest-number-that-is-evenly-divisible-by-all-of-the-numbers-from-1-to-20
+    """
+    
 
 def gcd(m, n):
     while n != 0:
@@ -27,12 +35,12 @@ def gcd_s(a, b):
 
 @func_time
 def gcd_reduce():
-    print "use gcd and reduce and lambda:"
+    print "\nuse gcd and reduce and lambda:"
     print reduce(lambda a, b: a*b/gcd(a,b), xrange(1, 20+1))
 
 @func_time
 def gcd_s_reduce():
-    print "use a short gcd with reduce and lambda:"
+    print "\nuse a short gcd with reduce and lambda:"
     print reduce(lambda a, b: a*b/gcd_s(a,b), xrange(1, 20+1))
 
 if __name__ == "__main__":
