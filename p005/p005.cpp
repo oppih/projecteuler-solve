@@ -14,11 +14,12 @@ while(flag == 0)
         if (num%divisor != 0)
             break;
     }
-    if (divisor != 21)
+    if (divisor == 21) // I change the != to == and it works!
+    //but it takes more time...
     {
         flag =  1;
-        cout<< " lowest divisible number upto 20 is  "<< num<<endl;
+        cout<< " lowest divisible number upto 20 is  "<< num <<endl;
     }
-    num++;
+    num += 2;
 }
 }
