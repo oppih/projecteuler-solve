@@ -3,6 +3,9 @@
 """
 use the cheat sheet
 maybe this feature needs some list tricks?
+
+After working on it for about three hours, I got it.
+It should be quick enought.
 """
 
 import math
@@ -21,16 +24,15 @@ def use_math():
     a = [1]*8
     check = True
     limit = math.sqrt(k)
-    for i in xrange(9):
-        if p[i] <= k:
-            if check:
-                if p[i] <= limit:
-                    a[i] = int(math.floor(math.log(k)/math.log(p[i])))
-                    print str(p[i]) + "^" + str(a[i])
-                else:
-                    check = False
-        N *= p[i] * a[i]
-        #i += 1
+    for i in xrange(8):
+        if check:
+            if p[i] <= limit:
+                a[i] = int(math.floor(math.log(k)/math.log(p[i])))
+                #print str(p[i]) + "^" + str(a[i])
+            else:
+                check = False
+        N *= p[i] ** a[i] # I was using * not ** ! foolish mistake!
+    print N
 
 if __name__ == "__main__":
     use_math()
