@@ -23,20 +23,23 @@ def loop_way():
     idea from stackoverflow
     http://stackoverflow.com/questions/2127039/smallest-number-that-is-evenly-divisible-by-all-of-the-numbers-from-1-to-20
     And, it took me 935.570346832 s to run it :(
+    but I sped it up!!! finally.
     """
-    testNum, flag = 20, 0
+    addto = 2*3*5*7*11*13*17*19
+    testNum, flag = addto, 0
     while flag == 0:
         #for i in xrange(2, 20+1):
         i = 2
         while i < 21:
-            print i, testNum
+            #print i, testNum
             if testNum % i != 0:
                 break
             i += 1
         if i == 21:
             flag = 1
+            print "\nthe loop way:"
             print testNum
-        testNum += 20
+        testNum += addto
 
 def gcd(m, n):
     while n != 0:
