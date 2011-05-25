@@ -47,7 +47,10 @@ def gcd(m, n):
     return m
 
 def gcd_s(a, b):
-    return gcd_s(b, a%b) if b else a # understand? from my test, it speeds up the function by TEN times.
+    return gcd_s(b, a%b) if b else a
+    # understand? from my test, it speeds up the function by TEN times.
+    #from @yongsun : if b > 0: return gcd_s(b, a%b) else: return a
+    # in C : return b? gcd(b, a%b): a
 
 @func_time
 def gcd_reduce():
