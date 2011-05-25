@@ -5,3 +5,8 @@ Project Euler is a series of challenging mathematical/computer programming probl
 The motivation for starting Project Euler, and its continuation, is to provide a platform for the inquiring mind to delve into unfamiliar areas and learn new concepts in a fun and recreational context.
 
 Try to solve ONE problem per day.Use Python/ObjC.
+
+I put my finished tasks in the overComed folder, 
+and in each folder such as p001,
+    p001.py is the answer find by myself,
+    s001.py is the answer based on the cheat sheet:)
