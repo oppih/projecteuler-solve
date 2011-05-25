@@ -25,13 +25,17 @@ def loop_way():
     """
     testNum, flag = 20, 0
     while flag == 0:
-        for i in xrange(2, 20+1):
-            if testNum % i == 0:
+        #for i in xrange(2, 20+1):
+        i = 2
+        while i < 21:
+            print i, testNum
+            if testNum % i != 0:
                 break
-            if i == 20:
-                flag = 1
-                print testNum
-        testNum += 2
+            i += 1
+        if i == 21:
+            flag = 1
+            print testNum
+        testNum += 20
 
 def gcd(m, n):
     while n != 0:

@@ -20,6 +20,6 @@ while(flag == 0)
         flag =  1;
         cout<< " lowest divisible number upto 20 is  "<< num <<endl;
     }
-    num += 2;
+    num += 20; // I change 2 to 20, it's much faster.
 }
 }
