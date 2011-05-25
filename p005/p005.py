@@ -22,6 +22,7 @@ def loop_way():
     """
     idea from stackoverflow
     http://stackoverflow.com/questions/2127039/smallest-number-that-is-evenly-divisible-by-all-of-the-numbers-from-1-to-20
+    And, it took me 935.570346832 s to run it :(
     """
     testNum, flag = 20, 0
     while flag == 0:
