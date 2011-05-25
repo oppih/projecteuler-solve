@@ -23,7 +23,17 @@ def loop_way():
     idea from stackoverflow
     http://stackoverflow.com/questions/2127039/smallest-number-that-is-evenly-divisible-by-all-of-the-numbers-from-1-to-20
     """
-    
+    testNum = 20
+    flag = 0
+    while flag == 0:
+        for i in xrange(2, 20+1):
+            if testNum % i == 0:
+                continue
+            else:
+                testNum += 2
+                print i, testNum
+            if i == 20:
+                flag = 1
 
 def gcd(m, n):
     while n != 0:
@@ -47,4 +57,4 @@ if __name__ == "__main__":
     manually_count()
     gcd_reduce()
     gcd_s_reduce()
-
+    loop_way()
