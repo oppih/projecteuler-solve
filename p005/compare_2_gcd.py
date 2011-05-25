@@ -20,19 +20,16 @@ def gcd_1(a, b):
     return gcd_1(b, a%b) if b else a
     
 @func_time     
-def test_gcd_0():
-    for i in xrange (100000):
-        m = random.randint(1, 10000)
-        n = random.randint(1, 10000)
+def test_gcd_0(m, n):
         gcd_0(m, n)
     
 @func_time
-def test_gcd_1():
-    for i in xrange (100000):
-        m = random.randint(1, 10000)
-        n = random.randint(1, 10000)
+def test_gcd_1(m, n):
         gcd_1(m, n)
         
 if __name__ == "__main__":
-    test_gcd_0()
-    test_gcd_1()
+    for i in xrange (100000):
+        m = random.randint(1, 10000)
+        n = random.randint(1, 10000)
+        test_gcd_0(m, n)
+        test_gcd_1(m, n)
