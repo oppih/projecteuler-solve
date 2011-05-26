@@ -3,6 +3,9 @@
 """
 use the cheat sheet
 maybe this feature needs some list tricks?
+
+After working on it for about three hours, I got it.
+It should be quick enought.
 """
 
 import math
@@ -16,34 +19,20 @@ def func_time(func):
 
 @func_time
 def use_math():
-    k = 20
-    N = 1
-    #i = 1
+    k, N = 20, 1
     p = [2, 3, 5, 7, 11, 13, 17, 19]
-    a = []
+    a = [1]*8
     check = True
     limit = math.sqrt(k)
-    # while p[i-1] <= k:
-    for mmm in p:
-        a.append(1)
-        if mmm <= k:
-            if check:
-                if mmm <= limit:
-                    print mmm, a
-                    a.append(int(math.floor(math.log(k)/math.log(mmm))))
-                    print a
-                    print
-                else:
-                    check = False
-        nnn = a.pop()
-        print nnn
-        N *= mmm * nnn
-        b = []
-        b.append(nnn)
-        a = b + a
-        print a
-            #i += 1
-    print N * 3
+    for i in xrange(8):
+        if check:
+            if p[i] <= limit:
+                a[i] = int(math.floor(math.log(k)/math.log(p[i])))
+                #print str(p[i]) + "^" + str(a[i])
+            else:
+                check = False
+        N *= p[i] ** a[i] # I was using * not ** ! foolish mistake!
+    print N
 
 if __name__ == "__main__":
     use_math()
