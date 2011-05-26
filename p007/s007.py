@@ -9,6 +9,7 @@ What is the 10001st prime number?
 This problem is easy and the cheat sheel use the similiar way with mine,
 """
 
+from math import *
 import time
 def func_time(func):
     def _wrapper(*args, **kwargs):
@@ -21,25 +22,29 @@ def func_time(func):
 # (1 is not considered a prime number by convention)
 
 def isprime(n):
-    '''check if integer n is a prime'''
-    # make sure n is a positive integer
-    n = abs(int(n))
-    # 0 and 1 are not primes
-    if n < 2:
+    if n == 1:
         return False
-    # 2 is the only even prime number
-    if n == 2: 
-        return True    
-    # all other even numbers are not primes
-    # this is cool~ :)
-    if not n & 1: 
+    elif n < 4:
+        return True
+    elif n % 2 == 0:
         return False
-    # range starts with 3 and only needs to go up the squareroot of n
-    # for all odd numbers
-    for x in range(3, int(n**0.5)+1, 2):
-        if n % x == 0:
-            return False
-    return True
+    elif n < 9:
+        return True
+    elif n % 3 == 0:
+        return False
+    else:
+        r = floor(sqrt(n))
+        f = 5
+        flag = True
+        while f <= r:
+            if n % f == 0:
+                flag = False
+                break
+            if n % (f+2) == 0:
+                flag = False
+                break
+            f += 6
+        return flag
 
 @func_time
 def find_prime():
@@ -52,4 +57,5 @@ def find_prime():
     print prime_s - 2
 
 if __name__ == "__main__":
+    print "The 10001th prime number is: "
     find_prime()
