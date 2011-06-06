@@ -32,6 +32,7 @@ def use_math():
         N *= p ** fac;
 
     return N
+    #return reduce (lambda n, p : n * (p ** (int(math.log(k)/math.log(p)) if p <= limit else 1)), primes, 1)
 
 if __name__ == "__main__":
     print use_math()
