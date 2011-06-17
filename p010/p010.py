@@ -57,6 +57,21 @@ def findPrimeSum():
         else:
             pass
     return sumPrime
+
+@func_time
+def betterPrimeSum():
+    limit = 2000000
+    sumPrime = 2 + 3
+    n = 5
+    while n < limit:
+        if isprime(n):
+            sumPrime += n
+        n += 2
+        if n < limit and isprime(n):
+            sumPrime += n
+        n += 4
+    return sumPrime
     
 if __name__ == "__main__":
     print findPrimeSum()
+    print betterPrimeSum()
