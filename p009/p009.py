@@ -19,3 +19,14 @@ def func_time(func):
     return _wrapper
 
 @func_time
+def triplet():
+    s = 1000
+    for a in xrange(3, int((s-3)/3)+1):
+        for b in xrange(a+1, (s-1-a)/2):
+            c = s - a - b
+            if a**2 + b**2 == c**2:
+                print a, b, c, a*b*c
+
+if __name__ == "__main__":
+    triplet()
+
