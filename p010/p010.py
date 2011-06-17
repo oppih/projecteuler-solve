@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 
 """
-The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-
-Find the sum of all the primes below two million.
+This script is used to count rumtime.
 """
-
 import time
 def func_time(func):
+    """
+    New decorator from @yongsun
+    """
     def _wrapper(*args, **kwargs):
         start = time.time()
-        func(*args, **kwargs)
+        ret = func(*args, **kwargs)
         print func.__name__, "run time:", time.time()-start
+        return ret
+
+    _wrapper.__name__ = func.__name__
     return _wrapper
 
 @func_time
