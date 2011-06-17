@@ -30,10 +30,16 @@ What is the greatest product of four adjacent numbers in any direction (up, down
 
 import time
 def func_time(func):
+    """
+    New decorator from @yongsun
+    """
     def _wrapper(*args, **kwargs):
         start = time.time()
-        func(*args, **kwargs)
+        ret = func(*args, **kwargs)
         print func.__name__, "run time:", time.time()-start
+        return ret
+
+    _wrapper.__name__ = func.__name__
     return _wrapper
 
 @func_time
