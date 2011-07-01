@@ -73,13 +73,13 @@ def productMax():
     tab = []
     #tab.append(int(x) for x in new_l if x != " ")
     # why cannot I just use :
-    # tab[int(x) for x in new_l if x != ''] ?
+    # tab[int(x) for x in new_l if x != '']
+
     for x in new_l:
         if x != "":# it's wrong to use " " (a space)
-            m = int(x)
-            tab.append(m)
+            tab.append(int(x))
     #print len(tab)
-    
+
 
     t = []
     for i in range(20):
