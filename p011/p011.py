@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#coding=utf-8
 
 """
 In the 20x20 grid below, four numbers along a diagonal line have been marked in red.
@@ -69,17 +70,26 @@ def productMax():
     """
 
     new_l = l.replace("\n", " ").split(" ")
-    #print new_l
-    tab = []
-    #tab.append(int(x) for x in new_l if x != " ")
-    # why cannot I just use :
-    # tab[int(x) for x in new_l if x != '']
+    tab = [int(x) for x in new_l if x != '']
+    """
+    Hint from TualatriX:
+    哈哈，要这样：
 
+    tab = [int(x) for x in new_l if x != '']
+
+    你要把列表的值赋给tab，所以要这样。
+
+    至于为什么：tab.append(int(x) for x in new_l if x != " ")不行，那是因为int(x) for x
+    in new_l if x != " "是要不断地进行循环操作，直到结束，它不会返回一个值。所以不能用tab.append(xxx)
+    """
+
+    """
+    tab = []
     for x in new_l:
         if x != "":# it's wrong to use " " (a space)
             tab.append(int(x))
     #print len(tab)
-
+    """
 
     t = []
     for i in range(20):
