@@ -88,13 +88,18 @@ def productMax():
     product = lambda s: reduce(lambda a, b : a*b, s)
 
     maxes = []
-    for i in xrange(16):
-        for j in xrange(16):
+    for i in xrange(16):# I change it from 16 to 17
+        for j in xrange(16):# but with the same wrong result
             maxes.append(product(t[i][j:j+4])) # horizontal
             maxes.append(product(d[j] for d in t[i:i+4])) # vertical
-            maxes.append(t[i][j]*t[i+1][j+1]*t[i+2][j+2]*t[i+3][j+3]) # diagonal 1
-            maxes.append(t[i+3][j]*t[i+2][j+1]*t[i+1][j+2]*t[i][j+3]) # diagonal 2
-        return max(maxes)
+            maxes.append(t[i][j]*t[i+1][j+1]*t[i+2][j+2]*t[i+3][j+3]) # diagonal \
+            maxes.append(t[i+3][j]*t[i+2][j+1]*t[i+1][j+2]*t[i][j+3]) # diagonal /
+            #By this part, I find out what's wrong :)
+            xx = 70600674
+            if xx in maxes:
+                print "Oops!" + str(i) + " " +  str(j)
+                break
+    return max(maxes) # invalid syntax here, used more indent :( and now corrected :)
 
 if __name__ == "__main__":
     print productMax()
