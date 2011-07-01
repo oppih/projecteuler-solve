@@ -16,14 +16,21 @@ Let us list the factors of the first seven triangle numbers:
 28: 1,2,4,7,14,28
 We can see that 28 is the first triangle number to have over five divisors.
 
-What is the value of the first triangle number to have over five hundred divisors?"""
+What is the value of the first triangle number to have over five hundred divisors?
+"""
 
 import time
 def func_time(func):
+    """
+    New decorator from @yongsun
+    """
     def _wrapper(*args, **kwargs):
         start = time.time()
-        func(*args, **kwargs)
+        ret = func(*args, **kwargs)
         print func.__name__, "run time:", time.time()-start
+        return ret
+
+    _wrapper.__name__ = func.__name__
     return _wrapper
 
 @func_time
