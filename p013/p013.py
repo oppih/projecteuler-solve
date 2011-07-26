@@ -18,8 +18,7 @@ def func_time(func):
     _wrapper.__name__ = func.__name__
     return _wrapper
 
-l = """
-37107287533902102798797998220837590246510135740250
+l = """37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -137,5 +136,13 @@ def findTenDigits():
     stringDigits = str(sumResult)
     return stringDigits[:10]
 
+@func_time
+def oneLineSolver():
+    """
+    May it be oneline solution, but not so-look easy.
+    """
+    return str(sum(makeList()))[0:10]
+
 if __name__ == "__main__":
     print findTenDigits()
+    print oneLineSolver()
