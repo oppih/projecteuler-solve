@@ -131,7 +131,7 @@ def findTenDigits():
     sumResult = 0
     for xx in sourceTab:
         sumResult += xx
-    print sumResult
+    #print sumResult
 
     stringDigits = str(sumResult)
     return stringDigits[:10]
