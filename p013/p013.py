@@ -153,9 +153,9 @@ def strFunctioner(strnums, ndigits):
     from math import log10
     value = sum(int(s) for s in strnums.splitlines() if s.isdigit())
     # splitlines() help you to split multiple lines directly, so I don't need replace("\n", " ")
-    return value/10**(int(log10(value)-ndigits+1)) # some comment: "/" gets int and 
+    return value/10**(int(log10(value)-ndigits+1)) # some comment: "/" gets int and the after just get rid of the rest 10s You need and then use 10**.
 
 if __name__ == "__main__":
     print findTenDigits()
     print oneLineSolver()
-    print strFunctioner(l, 10)# it's strange that I changed 1 to 9 to get 10 digits.
+    print strFunctioner(l, 10)
