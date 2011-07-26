@@ -131,7 +131,9 @@ def findTenDigits():
     sumResult = 0
     for xx in sourceTab:
         sumResult += xx
-    #print sumResult
+    print
+    print sumResult
+    print
 
     stringDigits = str(sumResult)
     return stringDigits[:10]
@@ -143,6 +145,17 @@ def oneLineSolver():
     """
     return str(sum(makeList()))[0:10]
 
+@func_time
+def strFunctioner(strnums, ndigits):
+    """
+    learn form http://pyeuler.wikidot.com/problems-11-20
+    """
+    from math import log10
+    value = sum(int(s) for s in strnums.splitlines() if s.isdigit())
+    # splitlines() help you to split multiple lines directly, so I don't need replace("\n", " ")
+    return value/10**(int(log10(value)-ndigits+1)) # some comment: "/" gets int and 
+
 if __name__ == "__main__":
     print findTenDigits()
     print oneLineSolver()
+    print strFunctioner(l, 10)# it's strange that I changed 1 to 9 to get 10 digits.
