@@ -22,10 +22,9 @@ def func_time(func):
 
 @func_time
 def xxTimes(times):
-    resultStr = str(2**times)
     summ = 0
-    for i in xrange(len(resultStr)):
-        summ += int(resultStr[i])
+    for i in str(2**times):
+        summ += int(i)
     return summ
 
 @func_time
