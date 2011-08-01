@@ -28,5 +28,11 @@ def xxTimes(times):
         summ += int(resultStr[i])
     return summ
 
+@func_time
+def onelineSolver(times):
+    return sum(int(i) for i in str(pow(2, times)))
+
 if __name__ == "__main__":
     print xxTimes(1000)
+    print onelineSolver(1000)
+
