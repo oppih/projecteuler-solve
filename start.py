@@ -44,4 +44,4 @@ subprocess.call(cmd_git_2, shell = True)
 
 webbrowser.open_new_tab(url)
 
-print "Remember, now your are in branch %s\n" % str_problem
+print "\n\nRemember, now your are in branch %s\n" % str_problem
