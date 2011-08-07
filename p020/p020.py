@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 """
-This script is used to count rumtime.
+Find the sum of the digits in the number 100!
+http://projecteuler.net/index.php?section=problems&id=20
 """
 import time
 def func_time(func):
