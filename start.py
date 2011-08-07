@@ -28,6 +28,8 @@ str_problem = "p0" + problem
 url = "http://projecteuler.net/index.php?section=problems&id=" + problem
 
 # git init
+cmd_got_00 = "git checkout master"
+subprocess.call(cmd_git_00, shell = True)
 cmd_git_0 = "git checkout -b %s" % str_problem
 subprocess.call(cmd_git_0, shell = True)
 
