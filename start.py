@@ -15,7 +15,7 @@ This is written for the automation when starting a new problem.
 # url = http://projecteuler.net/index.php?section=problems&id= + str(int(problem[1:]))
 # webbrowser.open(url)
 
-import subprocess, os
+import subprocess, os, webbrowser
 
 print "Welcome Message"
 
@@ -40,3 +40,6 @@ cmd_git_1 = "git add ./%s/%s.py" %(str_problem, str_problem)
 subprocess.call(cmd_git_1, shell = True)
 
 cmd_git_2 = "git status"
+subprocess.call(cmd_git_2, shell = True)
+
+webbrowser.open_new_tab(url)
