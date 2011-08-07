@@ -43,3 +43,5 @@ cmd_git_2 = "git status"
 subprocess.call(cmd_git_2, shell = True)
 
 webbrowser.open_new_tab(url)
+
+print "Remember, now your are in branch %s\n" % str_problem
