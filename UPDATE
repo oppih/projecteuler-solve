@@ -1,0 +1,3 @@
+--2011.8.7--
+in 'onstart' branch, I workout start.py for automation creat new branch to slove problem.
+Just run "./start.py" and then you would be prompted to enter the number:)
