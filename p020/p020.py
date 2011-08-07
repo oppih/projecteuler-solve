@@ -18,3 +18,8 @@ def func_time(func):
     return _wrapper
 
 @func_time
+def sumOfN(startNum):
+    return sum(int(x) for x in str(reduce(lambda x,y:x*y, xrange(1, startNum+1))))
+
+if __name__ == "__main__":
+    print sumOfN(100)
