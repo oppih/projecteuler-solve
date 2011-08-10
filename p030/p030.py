@@ -18,8 +18,8 @@ def func_time(func):
     return _wrapper
 
 @func_time
-def powerDigits(baseNum, topNum):
-    return sum(x for x in xrange(baseNum, topNum) if sum(int(y)**5 for y in str(x)) == x)
+def powerDigits(topNum):
+    return sum(x for x in xrange(2, topNum) if sum(int(y)**5 for y in str(x)) == x)
 
 if __name__ == "__main__":
-    print powerDigits(2, 200000)
+    print powerDigits(200000)
