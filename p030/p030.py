@@ -26,7 +26,7 @@ so, it's 6 digits!
 """
 @func_time
 def powerDigits(powers):
-    return sum(x for x in xrange(2, 9**(powers+1)) if sum(int(y)**5 for y in str(x)) == x)
+    print [x for x in xrange(2, powers) if sum(int(y)**5 for y in str(x)) == x]
 
 if __name__ == "__main__":
-    print powerDigits(5)
+    print powerDigits(9**6)#531,441
