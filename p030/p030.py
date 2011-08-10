@@ -19,7 +19,7 @@ def func_time(func):
 
 @func_time
 def powerDigits(baseNum, topNum):
-    return sum(x for x in xrange(baseNum, topNum) if sum(pow(int(y) for y in str(x), 5)) == x)
+    return sum(x for x in xrange(baseNum, topNum) if sum(int(y)**5 for y in str(x)) == x)
 
 if __name__ == "__main__":
     print powerDigits(2, 200000)
