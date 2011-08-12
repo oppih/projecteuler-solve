@@ -25,6 +25,9 @@ zero2nineF = (1,1,2,jc(3),jc(4),jc(5),jc(6),jc(7),jc(8),jc(9))
 
 @func_time
 def sumFactorionPlus(uplimit):
+    """
+    shorten form my own code.
+    """
     return sum(x for x in xrange(3, uplimit) if x == sum(zero2nineF[int(y)] for y in str(x)))
 
 @func_time
@@ -32,7 +35,7 @@ def oneCrazyLine(uplimit):
     """
     http://projecteuler.net/index.php?section=forum&id=34
     """
-    return sum(xxxx for xxxx in [int(reduce(lambda x, y: int(x) + int(y), [str(reduce(lambda x, y: x * y, range(1, int(i) + 1) + [1])) for i in str(j)])) for j in range(0, uplimit) if (j == int(reduce(lambda x, y: int(x) + int(y), [str(reduce(lambda x, y: x * y, range(1, int(i) + 1) + [1])) for i in str(j)])))])
+    return sum(xxxx for xxxx in [int(reduce(lambda x, y: int(x) + int(y), [str(reduce(lambda x, y: x * y, range(1, int(i) + 1) + [1])) for i in str(j)])) for j in range(0, uplimit) if (j == int(reduce(lambda x, y: int(x) + int(y), [str(reduce(lambda x, y: x * y, range(1, int(i) + 1) + [1])) for i in str(j)])))]) - 1 - 2 # too hard to understand, and some parts dulplicated.
 
 # since:
 # len(str(jc(9)*7)) = 7
