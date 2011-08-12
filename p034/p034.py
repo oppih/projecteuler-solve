@@ -41,4 +41,4 @@ def oneCrazyLine(uplimit):
 
 if __name__ == "__main__":
     print sumFactorionPlus(7*jc(9)/60)
-    print oneCrazyLine(7*jc(9))
+    print oneCrazyLine(7*jc(9)/60)
