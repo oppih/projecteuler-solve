@@ -21,30 +21,11 @@ def func_time(func):
 def jc(n):
     return reduce(lambda x,y:x*y, xrange(1, n+1))
 
-zero2nine = (1,1,2,jc(3),jc(4),jc(5),jc(6),jc(7),jc(8),jc(9))
-
-def isFactorion(nn):
-    """
-    I'll try to shorten this part.
-    """
-    sumxx = 0
-    for x in str(nn):
-        sumxx += zero2nine[int(x)]
-    if nn == sumxx:
-        return True
-    else:
-        return False
-
-def isFactorionPlus(nn):
-    return nn == sum(zero2nine[int(x)] for x in str(nn))
-
-@func_time
-def sumFactorion(uplimit):
-    return sum(x for x in xrange(3, uplimit) if isFactorionPlus(x))
+zero2nineF = (1,1,2,jc(3),jc(4),jc(5),jc(6),jc(7),jc(8),jc(9))
 
 @func_time
 def sumFactorionPlus(uplimit):
-    return sum(x for x in xrange(3, uplimit) if x ==sum(zero2nine[int(y)] for y in str(x)))
+    return sum(x for x in xrange(3, uplimit) if x == sum(zero2nineF[int(y)] for y in str(x)))
 
 # since:
 # len(str(jc(9)*7)) = 7
@@ -52,5 +33,4 @@ def sumFactorionPlus(uplimit):
 # 8 digits would not result in an 8 digit number even with 99999999
 
 if __name__ == "__main__":
-    print sumFactorion(7*jc(9))
     print sumFactorionPlus(7*jc(9))
