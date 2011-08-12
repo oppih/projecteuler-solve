@@ -33,4 +33,4 @@ def sumFactorionPlus(uplimit):
 # 8 digits would not result in an 8 digit number even with 99999999
 
 if __name__ == "__main__":
-    print sumFactorionPlus(7*jc(9))
+    print sumFactorionPlus(7*jc(9)/60)
