@@ -24,6 +24,9 @@ def jc(n):
 zero2nine = (1,1,2,jc(3),jc(4),jc(5),jc(6),jc(7),jc(8),jc(9))
 
 def isFactorion(nn):
+    """
+    I'll try to shorten this part.
+    """
     sumxx = 0
     for x in str(nn):
         sumxx += zero2nine[int(x)]
@@ -32,9 +35,17 @@ def isFactorion(nn):
     else:
         return False
 
+def isFactorionPlus(nn):
+    return nn == sum(zero2nine[int(x)] for x in str(nn))
+
 @func_time
 def sumFactorion(uplimit):
-    return sum(x for x in xrange(3, uplimit) if isFactorion(x))
+    return sum(x for x in xrange(3, uplimit) if isFactorionPlus(x))
+
+# since:
+# len(str(jc(9)*7)) = 7
+# len(str(jc(9)*8)) = 7
+# 8 digits would not result in an 8 digit number even with 99999999
 
 if __name__ == "__main__":
     print sumFactorion(7*jc(9))
