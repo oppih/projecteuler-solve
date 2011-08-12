@@ -42,6 +42,10 @@ def isFactorionPlus(nn):
 def sumFactorion(uplimit):
     return sum(x for x in xrange(3, uplimit) if isFactorionPlus(x))
 
+@func_time
+def sumFactorionPlus(uplimit):
+    return sum(x for x in xrange(3, uplimit) if x ==sum(zero2nine[int(y)] for y in str(x)))
+
 # since:
 # len(str(jc(9)*7)) = 7
 # len(str(jc(9)*8)) = 7
@@ -49,3 +53,4 @@ def sumFactorion(uplimit):
 
 if __name__ == "__main__":
     print sumFactorion(7*jc(9))
+    print sumFactorionPlus(7*jc(9))
