@@ -34,7 +34,7 @@ def isPrime(num):
 
 @func_time
 def sumRotations(uplimit):
-    return len([x for x in xrange(2, uplimit) if isPrime(x) and isPrime(int(str(x)[::-1]))])
+    return [x for x in xrange(2, uplimit) if isPrime(x) and isPrime(int(str(x)[::-1]))]
 
 if __name__ == "__main__":
-    print sumRotations(1000000)
+    print len(sumRotations(1000000))
