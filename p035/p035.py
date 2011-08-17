@@ -33,7 +33,11 @@ def isPrime(num):
         return True
 
 def isCircular(numstr):
-    return isPrime(yy for yy in [int(numstr[i:] + numstr[:i]) for i in len(numstr)])
+    flag = True
+    for yy in [int(numstr[i:] + numstr[:i]) for i in len(numstr)]:
+        if not isPrime(yy):
+            flag = False
+    return flag
 
 @func_time
 def sumRotations(uplimit):
