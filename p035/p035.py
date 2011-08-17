@@ -39,5 +39,10 @@ def isCircular(numstr):
 def sumRotations(uplimit):
     return [x for x in xrange(2, uplimit) if isCircular(str(x))]
 
+"""
+Link below helped me understand what I need to get out:
+    http://primes.utm.edu/glossary/page.php?sort=CircularPrime
+"""
+
 if __name__ == "__main__":
     print len(sumRotations(1000000))
