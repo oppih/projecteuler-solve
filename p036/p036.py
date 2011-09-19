@@ -23,4 +23,17 @@ def func_time(func):
     _wrapper.__name__ = func.__name__
     return _wrapper
 
+def isPalindrome(n, base):
+    digits = []
+    while n > 0:
+        d = str(n % base)
+        digits.append(d)
+        n = n / base
+    return digits == digits[::-1]
+
 @func_time
+def sumPalindrome():
+    return sum(n for n in xrange(1, 1000000) if isPalindrome(n, 10) and isPalindrome(n, 2))
+
+if __name__ == "__main__":
+    print sumPalindrome()
