@@ -25,11 +25,14 @@ def func_time(func):
 
 def isPalindrome(n, base):
     digits = []
+    reverses = []
     while n > 0:
         d = str(n % base)
         digits.append(d)
+        reverses.insert(0, d)
         n = n / base
-    return digits == digits[::-1]
+    #return digits == digits[::-1]
+    return digits == reverses
 
 @func_time
 def sumPalindrome():
