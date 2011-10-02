@@ -26,8 +26,7 @@ def func_time(func):
 def isPalindrome(n, base):
     digits = []
     while n > 0:
-        d = str(n % base)
-        digits.append(d)
+        digits.append(str(n % base))
         n = n / base
     return digits == digits[::-1]
 
