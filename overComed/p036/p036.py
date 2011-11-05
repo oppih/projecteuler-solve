@@ -32,7 +32,7 @@ def isPalindrome(n, base):
 
 @func_time
 def sumPalindrome():
-    return sum(n for n in xrange(1, 1000000) if isPalindrome(n, 10) and isPalindrome(n, 2))
+    return sum(n for n in xrange(1, 1000000, 2) if isPalindrome(n, 10) and isPalindrome(n, 2))
 
 if __name__ == "__main__":
     print sumPalindrome()
