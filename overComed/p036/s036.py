@@ -39,7 +39,7 @@ def makePalindromeBase2(n, oddlength): # oddlength for 'xyzzyx' or 'xyzyx'
     if oddlength:
         n = n >> 1
     while n > 0:
-        res = res << 1 + n and 1
+        res = res << 1 + n & 1
         n = n >> 1
     return res
 
