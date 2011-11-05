@@ -35,8 +35,10 @@ subprocess.call(cmd_git_0, shell = True)
 
 # make sure if the branch I want to creat is alraedy exits.
 os.mkdir("./" + str_problem)
-cmd0 = "cp ./func_time.py ./%s/%s.py" %(str_problem, str_problem)
+cmd0 = "cp ./sample.py ./%s/%s.py" %(str_problem, str_problem)
+cmd00 = "cp ./func_time.py ./%s/func_time.py" % str_problem
 subprocess.call(cmd0, shell = True)
+subprocess.call(cmd00, shell = True)
 
 cmd_git_1 = "git add ./%s/%s.py" %(str_problem, str_problem)
 subprocess.call(cmd_git_1, shell = True)

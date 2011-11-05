@@ -16,5 +16,3 @@ def func_time(func):
 
     _wrapper.__name__ = func.__name__
     return _wrapper
-
-@func_time
