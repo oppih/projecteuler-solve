@@ -4,6 +4,9 @@
 
 from func_time import func_time
 
+def your_solution_function():
+
+
 @func_time
 def yourNewFunctionHere():
 
