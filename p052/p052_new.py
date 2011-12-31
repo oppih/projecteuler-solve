@@ -13,11 +13,12 @@ def multiples_have_same_digits(n):
 
 @func_time
 def newSolve():
-    n = 0
+    n = 0 + 9
     while True:
-        n = n + 9  # n must be a multiple of 9 for this to happen
         if multiples_have_same_digits(n):
             return n
+        else:
+            n = n + 9  # n must be a multiple of 9 for this to happen
 
 if __name__ == "__main__":
     print newSolve()
