@@ -11,18 +11,17 @@ from func_time import func_time
 @func_time
 def findSameDigit():
     isFound = False
-    while isFound != True:
-        for i in xrange(2,1000000):
-            for j in xrange(2, 7):
-                if set(str(i)) == set(str(i*j)) and j == 6:
-                    isFound = True
-                    break
-                elif set(str(i)) == set(str(i*j)):
-                    continue
-                else:
-                    break
-            if isFound == True:
-                return i
+    for i in xrange(2, 1000000):
+        for j in xrange(2, 7):
+            if set(str(i)) == set(str(i*j)) and j == 6:
+                isFound = True
+                break
+            elif set(str(i)) == set(str(i*j)):
+                continue
+            else:
+                break
+        if isFound == True:
+            return i
 
 if __name__ == "__main__":
     print findSameDigit()
